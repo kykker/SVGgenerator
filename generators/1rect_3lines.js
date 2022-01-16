@@ -2,13 +2,15 @@
 const utils = require('./saveFile');
 
 // origin is the center, epicenter of all the arrays
-const origin = 200
+// const origin = utils.randomNumber( 180, 220 );
+const originX = utils.randomNumber( 20, 380 )
+const originY = utils.randomNumber( 190, 210 )
 const size = 400
 // upper bound of the rectangle
-const height = 100
-const rect_up = utils.randomNumber( (origin-height-20), (origin-20) )
+const height = utils.randomNumber( 80, 100 )
+const rect_up = utils.randomNumber( (originY-height-20), (originY-20) )
 const rect_low = rect_up+height
-const originString = `M${origin} ${origin}`;
+const originString = `M${originX} ${originY}`;
 
 let randomness = utils.randomNumber( 0, 5 )
 
@@ -26,6 +28,14 @@ let fnArray = [
      fnY2,
      fnY3,
      fnY4,
+]
+
+const raysPalette = [
+
+]
+
+const rectPalette = [
+
 ]
 
 // String template to build the SVG
