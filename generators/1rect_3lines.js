@@ -7,6 +7,7 @@ const originX = utils.randomNumber( 20, 380 )
 const originY = utils.randomNumber( 190, 210 )
 const size = 400
 // upper bound of the rectangle
+const depth = utils.randomNumber( )
 const height = utils.randomNumber( 80, 100 )
 const rect_up = utils.randomNumber( (originY-height-20), (originY-20) )
 const rect_low = rect_up+height

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" >
+  
+<path d="M142 199 L216 94 " fill="transparent" stroke="magenta"/>
+<path d="M142 199 L169 184" fill="transparent" stroke="blue"/>
+<path d="M142 199 L0 95 " fill="transparent" stroke="darkgrey"/>
+<path d="M142 199 L400 98 " fill="transparent" stroke="green"/>
+
+<path d="M142 199 L200 500 " fill="transparent" stroke="darkred"/>
+<path d="M142 199 L200 180 " fill="transparent" stroke="orange"/>
+<path d="M142 199 L200 20 " fill="transparent" stroke="orange"/>
+
+<rect x="0" y="94" width="400" height="90" 
+     stroke="/27f5e566" stroke-opacity="0.8" 
+     fill="purple" fill-opacity="0.1" />
+
+</svg>
