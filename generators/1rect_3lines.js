@@ -84,7 +84,7 @@ let randomSaltedColor = (r, array, s ) => {
 let arrayOfRaysColors = [];
 
 for ( let s = 1; s < 4; s++ ) {
-     let salt = s ** 2 * utils.randomNumber( 7, 8**s );
+     let salt = s + s** 2 * utils.randomNumber( 7, 8**(s+1) );
      console.log( "salt = ", salt )
      let randomRayColor1 = randomSaltedColor( randomness1, raysPalette, salt );
      arrayOfRaysColors.push( randomRayColor1 );

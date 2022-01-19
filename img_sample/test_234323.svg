@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" >
+  
+<path d="M110 206 L62 178 " fill="transparent" stroke="rgb(254, 248, 69)"/>
+<path d="M110 206 L323 266" fill="transparent" stroke="rgb(1, 1, 222)"/>
+<path d="M110 206 L0 265 " fill="transparent" stroke="rgb(199, 22, 28)"/>
+<path d="M110 206 L400 196 " fill="transparent" stroke="rgb(1, 1, 222)"/>
+
+<path d="M110 206 L200 500 " fill="transparent" stroke="rgb(196, 251, 83)"/>
+<path d="M110 206 L200 0 " fill="transparent" stroke="rgb(1, 1, 222)"/>
+
+<rect x="0" y="178" width="400" height="88" 
+     stroke="/27f5e566" stroke-opacity="0.8" 
+     fill="rgb(145, 207, 241)" fill-opacity="0.1" />
+
+</svg>
