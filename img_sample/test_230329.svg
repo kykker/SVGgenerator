@@ -6,8 +6,8 @@
 <path d="M305 195 L400 169 " fill="transparent" stroke="green"/>
 
 <path d="M305 195 L200 500 " fill="transparent" stroke="darkred"/>
-<path d="M305 195 L200 180 " fill="transparent" stroke="orange"/>
-<path d="M305 195 L200 20 " fill="transparent" stroke="orange"/>
+
+<path d="M305 195 L200 0 " fill="transparent" stroke="orange"/>
 
 <rect x="0" y="155" width="400" height="75" 
      stroke="/27f5e566" stroke-opacity="0.8" 

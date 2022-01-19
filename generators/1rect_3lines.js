@@ -13,7 +13,7 @@ const rect_up = utils.randomNumber( (originY-height-20), (originY-20) )
 const rect_low = rect_up+height
 const originString = `M${originX} ${originY}`;
 
-let randomness = utils.randomNumber( 0, 5 )
+let randomness = utils.randomNumber( 0, 100 )
 
 let fnIndex = randomness % 4
 console.log(fnIndex)
@@ -32,28 +32,59 @@ let fnArray = [
 ]
 
 const raysPalette = [
-
+     'rgb(1, 1, 222)',
+     'rgb(199, 22, 28)',
+     'rgb(199, 22, 28)',
+     'rgb(158, 11, 15)',
+     'rgb(246, 97, 0)',
+     'rgb(170, 160, 0)',
+     'rgb(147, 10, 14)',
+     'rgb(254, 248, 69)',
+     'rgb(146, 229, 114)',
+     'rgb(196, 251, 83)',
+     'rgb(127, 254, 114)',
+     'rgb(254, 137, 125)',
 ]
 
 const rectPalette = [
-
+     'rgb(255, 238, 207)',
+     'rgb(251, 152, 180)',
+     'rgb(145, 207, 241)',
+     'rgb(18, 223, 201)',
+     'rgb(251, 243, 200)',
+     'rgb(18, 223, 201)',
+     'rgb(251, 152, 180)',
+     'rgb(57, 227, 124)',
+     'rgb(239, 150, 45)',
+     'rgb(222, 195, 157)',
+     'rgb(236, 145, 152)',
 ]
+
+let randomColor = (r, array) => {
+     let index = r % array.length;
+     return array[index];
+}
+
+const randomBackground = randomColor( randomness, rectPalette );
+const randomRays = randomColor( randomness, raysPalette );
+
+
+
 
 // String template to build the SVG
 let rawSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" >
   
-<path d="${originString} L${fnY1} " fill="transparent" stroke="magenta"/>
-<path d="${originString} L${fnY2}" fill="transparent" stroke="blue"/>
-<path d="${originString} L${fnY3} " fill="transparent" stroke="darkgrey"/>
-<path d="${originString} L${fnY4} " fill="transparent" stroke="green"/>
+<path d="${originString} L${fnY1} " fill="transparent" stroke="${randomRays}"/>
+<path d="${originString} L${fnY2}" fill="transparent" stroke="${randomRays}"/>
+<path d="${originString} L${fnY3} " fill="transparent" stroke="${randomRays}"/>
+<path d="${originString} L${fnY4} " fill="transparent" stroke="${randomRays}"/>
 
-<path d="${originString} L200 500 " fill="transparent" stroke="darkred"/>
-<path d="${originString} L200 180 " fill="transparent" stroke="orange"/>
-<path d="${originString} L200 20 " fill="transparent" stroke="orange"/>
+<path d="${originString} L200 500 " fill="transparent" stroke="${randomRays}"/>
+<path d="${originString} L200 0 " fill="transparent" stroke="${randomRays}"/>
 
 <rect x="0" y="${rect_up}" width="400" height="${height}" 
      stroke="/27f5e566" stroke-opacity="0.8" 
-     fill="purple" fill-opacity="0.1" />
+     fill="${randomBackground}" fill-opacity="0.1" />
 
 </svg>`
 
