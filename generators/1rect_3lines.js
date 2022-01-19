@@ -13,9 +13,12 @@ const rect_up = utils.randomNumber( (originY-height-20), (originY-20) )
 const rect_low = rect_up+height
 const originString = `M${originX} ${originY}`;
 
-let randomness = utils.randomNumber( 0, 100 )
+let randomness1 = utils.randomNumber( 7357, 13256 )
+let randomness2 = utils.randomNumber( 1253, 6967 )
+console.log(randomness1)
+console.log(randomness2)
 
-let fnIndex = randomness % 4
+let fnIndex = randomness1 % 4
 console.log(fnIndex)
 
 // List of Functions to calculate Y, the end point of the rays inside the rectangle
@@ -60,27 +63,47 @@ const rectPalette = [
      'rgb(236, 145, 152)',
 ]
 
-let randomColor = (r, array) => {
+// Pick a random color based on an external randomness
+// pass the array of colors
+// also add some Salt, which will be added in the For Loop
+
+let randomColor = (r, array ) => {
+     // let saltedR = utils.randomNumber( 0, s ) * r ;
      let index = r % array.length;
      return array[index];
 }
+const randomBackground = randomColor( randomness1, rectPalette );
+console.log( randomBackground );
 
-const randomBackground = randomColor( randomness, rectPalette );
-const randomRays = randomColor( randomness, raysPalette );
+let randomSaltedColor = (r, array, s ) => {
+     let saltedR = s * r ;
+     let index = saltedR % array.length;
+     return array[index];
+}
 
+let arrayOfRaysColors = [];
 
+for ( let s = 1; s < 4; s++ ) {
+     let salt = s ** 2 * utils.randomNumber( 7, 8**s );
+     console.log( "salt = ", salt )
+     let randomRayColor1 = randomSaltedColor( randomness1, raysPalette, salt );
+     arrayOfRaysColors.push( randomRayColor1 );
+     let randomRayColor2 = randomSaltedColor( randomness2, raysPalette, salt );
+     arrayOfRaysColors.push( randomRayColor2 );
+}
+console.log(arrayOfRaysColors);
 
 
 // String template to build the SVG
 let rawSVG = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" >
   
-<path d="${originString} L${fnY1} " fill="transparent" stroke="${randomRays}"/>
-<path d="${originString} L${fnY2}" fill="transparent" stroke="${randomRays}"/>
-<path d="${originString} L${fnY3} " fill="transparent" stroke="${randomRays}"/>
-<path d="${originString} L${fnY4} " fill="transparent" stroke="${randomRays}"/>
+<path d="${originString} L${fnY1} " fill="transparent" stroke="${arrayOfRaysColors[0]}"/>
+<path d="${originString} L${fnY2}" fill="transparent" stroke="${arrayOfRaysColors[1]}"/>
+<path d="${originString} L${fnY3} " fill="transparent" stroke="${arrayOfRaysColors[2]}"/>
+<path d="${originString} L${fnY4} " fill="transparent" stroke="${arrayOfRaysColors[3]}"/>
 
-<path d="${originString} L200 500 " fill="transparent" stroke="${randomRays}"/>
-<path d="${originString} L200 0 " fill="transparent" stroke="${randomRays}"/>
+<path d="${originString} L200 500 " fill="transparent" stroke="${arrayOfRaysColors[4]}"/>
+<path d="${originString} L200 0 " fill="transparent" stroke="${arrayOfRaysColors[5]}"/>
 
 <rect x="0" y="${rect_up}" width="400" height="${height}" 
      stroke="/27f5e566" stroke-opacity="0.8" 
